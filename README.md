@@ -1,4 +1,4 @@
-# Your Plugin Name
+# nativescript-gigya
 
 Add your plugin badges here. See [nativescript-urlhandler](https://github.com/hypery2k/nativescript-urlhandler) for example.
 
@@ -15,7 +15,7 @@ Describe the prerequisites that the user need to have installed before using you
 Describe your plugin installation steps. Ideally it would be something like:
 
 ```javascript
-tns plugin add <your-plugin-name>
+tns plugin add nativescript-gigya
 ```
 
 ## Usage 
