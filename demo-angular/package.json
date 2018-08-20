@@ -1,0 +1,59 @@
+{
+  "description": "NativeScript Facebook Sample Application With Angular",
+  "license": "MIT",
+  "nativescript": {
+    "id": "com.emirates.neonative",
+    "tns-ios": {
+      "version": "4.1.0"
+    },
+    "tns-android": {
+      "version": "4.1.1"
+    }
+  },
+  "dependencies": {
+    "@angular/common": "~6.0.6",
+    "@angular/compiler": "~6.0.6",
+    "@angular/core": "~6.0.6",
+    "@angular/forms": "~6.0.6",
+    "@angular/http": "~6.0.6",
+    "@angular/platform-browser": "~6.0.6",
+    "@angular/platform-browser-dynamic": "~6.0.6",
+    "@angular/router": "~6.0.6",
+    "nativescript-angular": "~6.0.6",
+    "nativescript-gigya": "../src",
+    "nativescript-theme-core": "^1.0.4",
+    "nativescript-unit-test-runner": "^0.3.4",
+    "rxjs": "~6.1.0",
+    "tns-core-modules": "4.1.0",
+    "zone.js": "^0.8.4"
+  },
+  "devDependencies": {
+    "babel-traverse": "6.26.0",
+    "babel-types": "6.26.0",
+    "babylon": "6.18.0",
+    "filewalker": "0.1.2",
+    "jasmine-core": "^2.5.2",
+    "karma": "^1.3.0",
+    "karma-jasmine": "^1.0.2",
+    "karma-nativescript-launcher": "^0.4.0",
+    "lazy": "1.0.11",
+    "nativescript-css-loader": "~0.26.0",
+    "nativescript-dev-typescript": "^0.7.1",
+    "nativescript-dev-webpack": "~0.14.0",
+    "tslint": "~5.4.3",
+    "typescript": "~2.7.2",
+    "@angular/compiler-cli": "~6.1.0-beta.3",
+    "@ngtools/webpack": "6.1.0-rc.0"
+  },
+  "scripts": {
+    "build.plugin": "cd ../src && npm run build",
+    "ci.tslint": "npm i && tslint --config '../tslint.json' 'app/**/*.ts' --exclude '**/node_modules/**'",
+    "ci.android.build": "npm run build.plugin && tns build android",
+    "ci.ios.build": "npm run build.plugin && tns build ios",
+    "generate-android-snapshot": "generate-android-snapshot --targetArchs arm,arm64,ia32 --install",
+    "gen:keystore": "keytool -genkey -v -keystore neo.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000 -storepass changeit -keypass changeit -dname \"CN=NeoApp, OU=Neo, O=Emirates, L=Dubai, S=Dubai, C=UAE\"",
+    "gen:apk": "tns build android --release --key-store-path neo.keystore --key-store-password changeit --key-store-alias neo --key-store-alias-password changeit",
+    "gen:hash": "keytool -exportcert -alias neo -keystore neo.keystore -storepass changeit | openssl sha1 -binary | openssl base64",
+    "gen:hash:debug": "keytool -exportcert -alias androiddebugkey -keystore %HOMEPATH%/.android/debug.keystore | openssl sha1 -binary | openssl base64"
+  }
+}

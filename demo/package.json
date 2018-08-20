@@ -9,6 +9,7 @@
     "nativescript-gigya": "../src",
     "nativescript-theme-core": "^1.0.4",
     "nativescript-unit-test-runner": "^0.3.4",
+    "tns-android": "4.1.3",
     "tns-core-modules": "^4.1.0"
   },
   "devDependencies": {
